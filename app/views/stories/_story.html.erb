@@ -22,9 +22,9 @@
       <div class="textcontent">
         <p>
             <% if action_name.eql?("show") %>
-              <%= story.content %>
+              <%= raw story.content %>
             <% else %>
-              <%= truncate(story.content, :length => 1024) %>
+              <%= raw truncate(story.content, :length => 1024) %>
             <% end %>
         </p>
         <% @story_vote_id = "story" + story.id.to_s %>

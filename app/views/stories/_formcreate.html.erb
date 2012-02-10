@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag "add_story" %>
 <%= stylesheet_link_tag "subModal" %>
 <%= javascript_include_tag "subModal" %>
+<%= javascript_include_tag :ckeditor %>
 
 <div id="add_story">
   <div id="add_story-ct">
@@ -23,7 +24,7 @@
             <%= f.label :content, "История" %>
         </div>
         <div>
-            <%= f.text_area :content %>
+            <%= f.cktext_area :content %>
         </div>
       </div>
       <div class="btn-fld">
