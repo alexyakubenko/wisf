@@ -52,7 +52,7 @@
 			<span>
 			  <%= story.comments.count %>
 			</span>
-			комментариев
+			<%= comments_on_russian_by_count story.comments.count %>
         </div>
         <div id="more"><%= link_to "Далее", { :action => 'show', :id => story.id } %></div>
       <% else %>
