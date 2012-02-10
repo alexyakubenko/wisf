@@ -9,7 +9,7 @@
       <p>Это очень просто и быстро</p>
       <a class="modal_close" href="#" onclick="window.top.hidePopWin();"></a>
     </div>
-    <%= form_for :story, :url => { :controller => "stories"}  do |f| %>
+    <%= form_for :story, :url => { :controller => "stories"}, :html => { :class => :story_form } do |f| %>
       <div class="txt-fld">
         <div>
             <%= f.label :author, "Ваше имя" %>
