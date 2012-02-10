@@ -1,6 +1,8 @@
 # encoding: UTF-8
 
 class StoriesController < ApplicationController
+  include StoriesHelper
+
   before_filter :admin_auth, :only => [ :edit, :update, :destroy, :toggle_visiblity ]
   # GET /stories
   # GET /stories.xml
