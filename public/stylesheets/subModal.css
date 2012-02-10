@@ -11,7 +11,7 @@
 	opacity: .9;
 	filter: alpha(opacity=40);
 	/* this hack is so it works in IE
-	 * I find setting the color in the css gives me more flexibility 
+	 * I find setting the color in the css gives me more flexibility
 	 * than the PNG solution.
 	 */
 	background-color:transparent !important;
@@ -20,7 +20,7 @@
 	 * you can uncomment the background-image if you don't care about opera.
 	 * this gives you the flexibility to use any bg color that you want, instead of the png
 	 */
-	background-image/**/: url("maskBG.png") !important; 
+	background-image/**/: url("maskBG.png") !important;
 	background-image:none;
 	background-repeat: repeat;
 	display:none;
@@ -34,14 +34,12 @@
 	padding: 0px;
 }
 #popupInner {
-	border: 0px solid #000000;
-	background-color: #ffffff;
-}
-
-#popupFrame {
-	margin: 0px;
-	width: 100%;
-	height: 100%;
-	position: relative;
-	z-index: 202;
+    padding-bottom: 2px;
+    background: #FFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
 }
