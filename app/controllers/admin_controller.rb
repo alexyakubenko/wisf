@@ -5,7 +5,7 @@ class AdminController < ApplicationController
 
   def signin    
     session[:user] = User.authenticate(params[:user][:username], params[:user][:password]).id
-    redirect_to :back , :notice => "Добро пожаловать в мир дур, о всемогущий #{params[:user][:username]}!"
+    redirect_to comments_path , :notice => "Добро пожаловать в мир дур, о всемогущий #{params[:user][:username]}!"
   end
 
   def signout
