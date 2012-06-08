@@ -39,14 +39,14 @@
     <div id="container" class="fix ">
       <div id="maincontent">
         <div id="content">
-	  <% if !params[:notice].blank? %>
-          <p id="notice"><%= params[:notice] %></p>
-	  <% end %>
+          <% if !params[:notice].blank? %>
+            <p id="notice"><%= params[:notice] %></p>
+          <% end %>
           <%= yield :content %>
         </div> <!-- end content -->
+        <%= render :partial => "advert/google_adsence" %>
+      </div>
     </div>
-  </div>
-  <%= render :partial => "advert/google_adsence" %>
   <div  id="footer">
     <div class="effect">
       <div class="content">
