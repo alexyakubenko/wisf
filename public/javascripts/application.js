@@ -35,7 +35,7 @@ function skyscraper_init() {
     a.css('margin-top', -a.height());
     ki = 0;
     advert_animate();
-    window.onscroll = advert_animate;
+//    window.onscroll = advert_animate;
 };
 
 function comment_notify(message) {
@@ -55,4 +55,6 @@ $(document).ready(function () {
         $(this).removeClass("menuhover");
         $('ul:first',this).fadeOut("fast");
     });
+    
+    skyscraper_init();
 });
