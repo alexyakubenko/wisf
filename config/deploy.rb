@@ -4,7 +4,7 @@ require 'rvm/capistrano'
 
 server '146.185.132.192', :web, :app, :db, primary: true
 
-set :rvm_ruby_string, 'ruby-1.9.3-p448wisf'
+set :rvm_ruby_string, 'ruby-1.9.3-p448@wisf'
 set :rvm_type, :system
 
 set :application, 'wisf'
