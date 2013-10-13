@@ -1,0 +1,9 @@
+production:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: wisf
+  pool: 5
+  host: localhost
+  username: user
+  password: secret
