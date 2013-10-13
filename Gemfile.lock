@@ -99,7 +99,7 @@ DEPENDENCIES
   capistrano
   jquery-rails
   pg
-  rails
+  rails (= 3.0.4)
   russian
   unicorn
   will_paginate (~> 3.0.pre2)
