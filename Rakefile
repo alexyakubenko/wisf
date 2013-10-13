@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-#WhyISoFool::Application.load_tasks
+WhyISoFool::Application.load_tasks
