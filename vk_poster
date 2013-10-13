@@ -1,4 +1,4 @@
-#!/home/smit/.rvm/bin/ruby
+#!~/.rvm/bin/ruby
 # encoding: UTF-8
 require "watir-webdriver"
 require "mechanize"
