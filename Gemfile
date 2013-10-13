@@ -7,4 +7,5 @@ gem 'pg'
 gem 'will_paginate', '~> 3.0.pre2'
 #gem "ckeditor"
 gem 'capistrano'
+gem 'rvm-capistrano'
 gem 'unicorn'
