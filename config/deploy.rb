@@ -1,6 +1,6 @@
 require 'bundler/capistrano'
 require 'rvm/capistrano'
-#require 'new_relic/recipes'
+require 'new_relic/recipes'
 
 server 'wisf.f5screening.com', :web, :app, :db, primary: true
 
