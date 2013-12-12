@@ -9,6 +9,6 @@ stdout_path "#{ root }/log/unicorn.log"
 
 listen '/tmp/unicorn.wisf.sock'
 
-worker_processes 2
+worker_processes 4
 
 timeout 30
