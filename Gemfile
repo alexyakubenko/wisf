@@ -9,6 +9,7 @@ gem 'will_paginate', '~> 3.0.pre2'
 gem 'ckeditor'
 gem 'unicorn'
 gem 'newrelic_rpm'
+gem 'airbrake'
 
 group :development do
   gem 'capistrano'

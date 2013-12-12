@@ -28,6 +28,9 @@ GEM
     activesupport (3.2.16)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    airbrake (3.1.14)
+      builder
+      json
     arel (3.0.3)
     builder (3.0.4)
     capistrano (2.15.5)
@@ -118,6 +121,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   capistrano
   capistrano-unicorn
   ckeditor
