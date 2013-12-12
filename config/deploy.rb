@@ -2,9 +2,9 @@ require 'bundler/capistrano'
 require 'rvm/capistrano'
 #require 'new_relic/recipes'
 
-server '146.185.132.192', :web, :app, :db, primary: true
+server 'wisf.f5screening.com', :web, :app, :db, primary: true
 
-set :rvm_ruby_string, 'ruby-1.9.3-p448@wisf'
+set :rvm_ruby_string, 'ruby-2.0.0-p353@wisf'
 set :rvm_type, :system
 
 set :application, 'wisf'
