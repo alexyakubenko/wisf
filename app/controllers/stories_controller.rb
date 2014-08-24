@@ -108,7 +108,7 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(params[:story])
     @story.vk_label = false
-    if @story.content.include? "://"
+    if @story.content.include? "://" || @story.non_english?
       respond_to do |format|
         format.html { render :text => "<html><head><link href='/stylesheets/theme000.css' media='screen' rel='stylesheet' type='text/css'/><script>window.setTimeout('window.top.hidePopWin()', 10000);</script></head><body><p id='notice'>Пиздуй отсюда нахуй, ёбаный спамер</p><p style='text-align: center;'>Что за хуйню ты мне тут пишешь? А??? СУКА!!!</p><div style='text-align: center;'>" + params[:story][:content] + "</div><div style='width: 300; margin: 0px auto;'><input type='button' value='Скрыть (Автоскрытие в течении 10 секунд)' onclick='window.top.hidePopWin();' class='button'/></div><p style='text-align: center;'><a href='' onclick='window.top.hidePopWin();window.open(\"http://natribu.org/\");'>Пойти нахуй</a><p></body></html>" }
       end
@@ -165,7 +165,7 @@ class StoriesController < ApplicationController
     end
 		@story = Story.find(params[:id])
 		@comment.story = @story
-    @saved = (@comment.save) and ((session["lastcommenttime"].blank?) or (Time.now - session["lastcommenttime"] > 60))
+    @saved = @comment.non_english? && @comment.save && (session["lastcommenttime"].blank? || (Time.now - session["lastcommenttime"] > 60))
 #    if @saved
 #      Thread.new do
 #        User.all.each do |user|
