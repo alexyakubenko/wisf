@@ -71,7 +71,7 @@ class StoriesController < ApplicationController
   # GET /stories/1.xml
   def show
     @story = Story.includes(:comments).find(params[:id])
-    @next = (@story.id.eql?(Story.last.id)) ? Story.first.id : Story.where(["id > ?", params[:id]]).limit(1).first.id
+    @next = (@story.id.eql?(Story.last.id)) ? Story.first.id : Story.where(["id > ?", params[:id]]).where(:aprooved => true).limit(1).first.id
     @prev = (@story.id.eql?(Story.first.id)) ? Story.last.id : getPrev(@story.id)
     respond_to do |format|
       format.html # show.html.erb
@@ -186,7 +186,7 @@ class StoriesController < ApplicationController
 	  i = id.to_i
 	  loop do
   		i = i - 1
-  		break if (Story.where(["id = ?", i.to_s]).size > 0)
+  		break if (Story.where(["id = ?", i.to_s]).where(:aprooved => true).size > 0)
   	end
   	i.to_s
   end
