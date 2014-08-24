@@ -5,6 +5,6 @@ class Story < ActiveRecord::Base
   validate :non_english?
 
   def non_english?
-    self.content.downcase.scan(/[a-z]/).size < self.content.size
+    self.content.downcase.scan(/[a-z]/).size < self.content.size.to_f / 2
   end
 end
