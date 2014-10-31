@@ -3,7 +3,7 @@
   <div class="post-36 post type-post hentry category-uncategorized" id="post-36">
     <div class="adminmenu">
       <h1>Админский Вход</h1>
-      <% form_for :user, :url => { :action => 'signin'} do |form|  %>
+      <%= form_for :user, :url => { :action => 'signin'} do |form|  %>
         <p><%= form.label :username, 'Имя пользователя:' %></p>
         <p><%= form.text_field :username %></p>
         <p<%= form.label :password, 'Пароль:' %></p>
