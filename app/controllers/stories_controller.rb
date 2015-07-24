@@ -51,7 +51,7 @@ class StoriesController < ApplicationController
     session["story" + params[:id]] = true
     respond_to do |format|
       format.js { render "rate_change" }
-      format.html { redirect_to get_url }
+      format.html { redirect_to @story }
     end
   end
 
@@ -63,7 +63,7 @@ class StoriesController < ApplicationController
     session["story" + params[:id]] = true
     respond_to do |format|
       format.js { render "rate_change" }
-      format.html { redirect_to get_url }
+      format.html { redirect_to @story }
     end
   end
 
