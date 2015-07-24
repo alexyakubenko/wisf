@@ -5,6 +5,6 @@ class Comment < ActiveRecord::Base
   belongs_to :story
 
   def non_english?
-    self.body.downcase.squish.scan(/[a-z]/).size < self.body.squish.size.to_f / 2
+    self.body.to_s.downcase.squish.scan(/[a-z]/).size < self.body.squish.size.to_f / 2
   end
 end
