@@ -71,8 +71,9 @@ class StoriesController < ApplicationController
   # GET /stories/1.xml
   def show
     @story = Story.includes(:comments).find(params[:id])
-    @next = (@story.id.eql?(Story.last.id)) ? Story.first.id : Story.where(["id > ?", params[:id]]).where(:aprooved => true).limit(1).first.id
-    @prev = (@story.id.eql?(Story.first.id)) ? Story.last.id : getPrev(@story.id)
+    @next = ((@story == Story.last) ? Story : Story.where(['id > ?', params[:id]])).where(:aprooved => true).first.id
+    @prev = ((@story == Story.first) ? Story : Story.where(['id < ?', params[:id]])).where(:aprooved => true).last.id
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @story }
@@ -178,16 +179,5 @@ class StoriesController < ApplicationController
       format.js
       format.html { redirect_to @story }
     end
-  end
-
-  private
-
-  def getPrev id
-	  i = id.to_i
-	  loop do
-  		i = i - 1
-  		break if (Story.where(["id = ?", i.to_s]).where(:aprooved => true).size > 0)
-  	end
-  	i.to_s
   end
 end
