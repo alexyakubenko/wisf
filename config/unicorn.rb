@@ -1,4 +1,4 @@
-root = "/root/apps/wisf/current"
+root = "/home/alex/apps/wisf/current"
 
 working_directory root
 

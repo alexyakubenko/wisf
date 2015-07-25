@@ -3,16 +3,17 @@ require 'rvm/capistrano'
 require 'new_relic/recipes'
 require 'capistrano-unicorn'
 
-server 'wisf.f5screening.com', :web, :app, :db, primary: true
+server 'wisf.f5screening.com', :web, :app, :db, primary: true, port: 25022
 
 set :rvm_ruby_string, 'ruby-2.0.0-p353@wisf'
 set :rvm_type, :system
 
 set :application, 'wisf'
-set :user, 'root'
-set :deploy_to, "/root/apps/#{ application }"
-set :deploy_via, :remote_cache
-set :use_sudo, false
+set :user, 'alex'
+set :password, 'Wilshere10'
+set :deploy_to, "/home/#{ user }/apps/#{ application }"
+#set :deploy_via, :remote_cache
+#set :use_sudo, true
 
 set :scm, 'git'
 set :repository, 'git@github.com:alexyakubenko/wisf.git'
